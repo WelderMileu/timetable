@@ -5,8 +5,12 @@ from easygui import *
 
 class Simple:
     def __init__(self):
-        self.url = "http://worldtimeapi.org/api/timezone/America/Sao_Paulo"
-        self.r   = requests.get(self.url)
+        try:
+            self.url = "http://worldtimeapi.org/api/timezone/America/Sao_Paulo"
+            self.r   = requests.get(self.url)
+    
+        except Exception as err:
+            print(err)
     
     def hours(self):
         try:
